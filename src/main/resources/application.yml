@@ -1,0 +1,40 @@
+---
+### LOCAL
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${CARROT_MARKET_LOCAL_DB_URL}
+    username: ${CARROT_MARKET_LOCAL_DB_USERNAME}
+    password: ${CARROT_MARKET_LOCAL_DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+---
+
+### PROD
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${CARROT_MARKET_PROD_DB_URL}
+    username: ${CARROT_MARKET_PROD_DB_USERNAME}
+    password: ${CARROT_MARKET_PROD_DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
