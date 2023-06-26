@@ -2,6 +2,8 @@
 
 REPOSITORY=/home/ubuntu/app
 
+source /home/ubuntu/.bash_profile
+
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
 CURRENT_PID=$(pgrep -fla java | grep hayan | awk '{print $1}')
@@ -28,4 +30,6 @@ chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
-nohup java -jar -Duser.timezone=Asia/Segoul $JAR_NAME >> $REPOSITORY/nohup.out 2>&1 &
+nohup java -jar \
+    -Dspring.profiles.active=prod \
+    $JAR_NAME >> $REPOSITORY/nohup.out 2>&1 &
