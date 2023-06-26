@@ -2,7 +2,7 @@
 
 REPOSITORY=/home/ubuntu/app
 
-source /home/ubuntu/.bash_profile
+source ~/.bash_profile
 
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
