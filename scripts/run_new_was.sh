@@ -34,7 +34,7 @@ sudo chmod 755 /home/ubuntu/app/nohup.out
 nohup java -jar \
         -Dserver.port=${TARGET_PORT} \
         -Dspring.profiles.active=prod \
-        $JAR_NAME >> /home/ubuntu/app/nohup.out 2>&1 &
+        $JAR_NAME > /home/ubuntu/app/nohup.out 2>&1 &
 echo "> Now new WAS runs at ${TARGET_PORT}."
 sleep 10s
 exit 0
