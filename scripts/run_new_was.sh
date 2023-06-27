@@ -29,7 +29,7 @@ if [ ! -z ${TARGET_PID} ]; then
 fi
 
 #sudo chmod +x $JAR_NAME
-sudo chmod +w /home/ubuntu/app/nohup.out
+sudo chmod +x /home/ubuntu/app/nohup.out
 
 nohup java -jar \
         -Dserver.port=${TARGET_PORT} \
