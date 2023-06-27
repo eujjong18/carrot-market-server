@@ -2,6 +2,8 @@
 
 #!/bin/bash
 
+source ~/.bash_profile
+
 JAR_NAME=$(ls -tr $REPOSITORY/*SNAPSHOT.jar | tail -n 1)
 
 CURRENT_PORT=$(cat /home/ubuntu/service_url.inc | grep -Po '[0-9]+' | tail -1)
@@ -23,6 +25,8 @@ if [ ! -z ${TARGET_PID} ]; then
   echo "> Kill WAS running at ${TARGET_PORT}."
   sudo kill ${TARGET_PID}
 fi
+
+chmod +x $JAR_NAME
 
 nohup java -jar \
         -Dserver.port=${TARGET_PORT} \
