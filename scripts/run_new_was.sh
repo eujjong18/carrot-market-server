@@ -4,6 +4,8 @@
 
 source ~/.bash_profile
 
+REPOSITORY=/home/ubuntu/app
+
 JAR_NAME=$(ls -tr $REPOSITORY/*SNAPSHOT.jar | tail -n 1)
 
 CURRENT_PORT=$(cat /home/ubuntu/service_url.inc | grep -Po '[0-9]+' | tail -1)
