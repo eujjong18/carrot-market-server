@@ -38,6 +38,10 @@ jobs:
 
       - name: Copy script
         run: cp ./scripts/*.sh ./deploy
+        
+      - name: Grant execute permission for deploy.sh
+        run: chmod +x ./scripts/deploy.sh
+        shell: bash
 
       - name: Make Zip File
         run: zip -r ./carrot-market.zip ./deploy
