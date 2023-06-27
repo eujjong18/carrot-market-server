@@ -42,6 +42,10 @@ jobs:
       - name: Grant execute permission for deploy.sh
         run: chmod +x ./scripts/deploy.sh
         shell: bash
+      
+      - name: Grant execute permission for run_new_was.sh
+        run: chmod +x ./scripts/run_new_was.sh
+        shell: bash
 
       - name: Make Zip File
         run: zip -r ./carrot-market.zip ./deploy
