@@ -28,8 +28,8 @@ if [ ! -z ${TARGET_PID} ]; then
   sudo kill ${TARGET_PID}
 fi
 
-sudo chmod +x $JAR_NAME
-#sudo chmod +x /home/ubuntu/app/nohup.out
+sudo chmod 755 $JAR_NAME
+sudo chmod 755 /home/ubuntu/app/nohup.out
 
 nohup java -jar \
         -Dserver.port=${TARGET_PORT} \
